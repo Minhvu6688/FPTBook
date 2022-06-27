@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPTBook", "FPTBook\FPTBook.csproj", "{694293C5-9165-4D02-9004-349AD2F1CDD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{694293C5-9165-4D02-9004-349AD2F1CDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694293C5-9165-4D02-9004-349AD2F1CDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694293C5-9165-4D02-9004-349AD2F1CDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694293C5-9165-4D02-9004-349AD2F1CDD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37A12FD8-1501-45BF-93AC-FDA7A54DFD39}
+	EndGlobalSection
+EndGlobal

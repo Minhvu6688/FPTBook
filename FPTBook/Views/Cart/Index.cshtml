@@ -1,0 +1,20 @@
+﻿@model ICollection<FPTBook.Models.Cart>
+
+    <table class="table-active">
+        <tr>
+            <th>Book Id</th>
+            <th>Book Name</th>
+            <th>Book Price</th>
+            <th>Book Title</th>
+        </tr>
+    @foreach(var cart in Model)
+    {
+        <tr>
+            <td>@cart.Id</td>
+            <td>@cart.Name</td>
+            <td>@cart.Price</td>
+            <td>@cart.Title</td>
+        </tr>
+    }
+
+    </table>
