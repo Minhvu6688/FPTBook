@@ -1,0 +1,45 @@
+﻿@model FPTBook.Models.Book
+
+<div class="container-fluid col-md-5 text-center mt-3">
+    <h5 class="alert alert-warning">Edit book</h5>
+    <form action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+
+        <div class="form-group">
+            <label class="text text-info">Book Name</label>
+            <input class="form-control" asp-for="Name" />
+            <span class="text text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="text text-info">Book Price</label>
+            <input class="form-control" asp-for="Price" />
+            <span class="text text-danger" asp-validation-for="Price"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="text text-info">Book Title</label>
+            <input class="form-control" asp-for="Title" />
+            <span class="text text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="text text-info">Customer Id</label>
+            <input class="form-control" asp-for="CustomerId" />
+            <span class="text text-danger" asp-validation-for="CustomerId"></span>
+        </div>
+        <div class="form-group">
+            <label class="text text-info">Cart Id</label>
+            <input class="form-control" asp-for="CartId" />
+            <span class="text text-danger" asp-validation-for="CartId"></span>
+        </div>
+
+
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Confirm">
+            
+        </div>
+         
+    </form>
+</div>
