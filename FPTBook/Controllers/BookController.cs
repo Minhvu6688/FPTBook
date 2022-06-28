@@ -42,18 +42,6 @@ namespace FPTBook.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-        [HttpPost]
-        public IActionResult Add(Book book)
-        {
-            if (ModelState.IsValid)
-            {
-                context.Book.Add(book);
-                context.SaveChanges();
-                return RedirectToAction("Book");
-
-            }
-            return View(book);
-        }
         public IActionResult Add()
         {
 
@@ -62,6 +50,18 @@ namespace FPTBook.Controllers
             ViewBag.Cart = cart;
             ViewBag.Customer = customer;
             return View();
+        }
+        [HttpPost]
+        public IActionResult Add(Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Book.Add(book);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            return View(book);
         }
         public IActionResult Edit(int? id)
         {
