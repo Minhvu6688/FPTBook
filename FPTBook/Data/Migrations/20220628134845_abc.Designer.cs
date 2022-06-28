@@ -4,14 +4,16 @@ using FPTBook.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FPTBook.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220628134845_abc")]
+    partial class abc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,11 +115,14 @@ namespace FPTBook.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Price")
                         .HasColumnType("real");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -127,32 +132,37 @@ namespace FPTBook.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Amount = 1,
-                            Price = 20000f
+                            Name = "Lama1",
+                            Price = 20000f,
+                            Title = "Truyen ma"
                         },
                         new
                         {
                             Id = 2,
-                            Amount = 2,
-                            Price = 21000f
+                            Name = "Lama2",
+                            Price = 25000f,
+                            Title = "Truyen ma"
                         },
                         new
                         {
                             Id = 3,
-                            Amount = 3,
-                            Price = 22000f
+                            Name = "Lama3",
+                            Price = 27000f,
+                            Title = "Sach Khoa hoc"
                         },
                         new
                         {
                             Id = 4,
-                            Amount = 4,
-                            Price = 23000f
+                            Name = "Lama4",
+                            Price = 27000f,
+                            Title = "Sach Khoa hoc"
                         },
                         new
                         {
                             Id = 5,
-                            Amount = 5,
-                            Price = 24000f
+                            Name = "Lama5",
+                            Price = 27000f,
+                            Title = "Sach Khoa hoc"
                         });
                 });
 
