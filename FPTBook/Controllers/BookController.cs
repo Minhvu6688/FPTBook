@@ -89,7 +89,7 @@ namespace FPTBook.Controllers
             {
                 context.Book.Update(book);
                 context.SaveChanges();
-                return RedirectToAction("ViewBook");
+                return RedirectToAction("Index");
             }
             return View(book);
         }
