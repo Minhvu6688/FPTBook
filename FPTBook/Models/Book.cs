@@ -19,6 +19,6 @@ namespace FPTBook.Models
         public int CustomerId { get; set; }
         public Cart Cart { get; set; }
         public Customer Customer { get; set; }
-        public string Image { get; set; }
+ 
     }
 }

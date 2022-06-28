@@ -4,14 +4,16 @@ using FPTBook.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FPTBook.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220628143752_four")]
+    partial class four
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace FPTBook.Data.Migrations
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(30)")
@@ -59,7 +58,6 @@ namespace FPTBook.Data.Migrations
                             Id = 1,
                             CartId = 1,
                             CustomerId = 1,
-                            Image = "https://radiotruyen.info/upload/cover/thumbnail_wm/Bao-Mong-Truyen-Ma-Kinh-Di.jpg",
                             Name = "Truyen ma",
                             Price = 20000f,
                             Title = "Truyen ma"
@@ -69,7 +67,6 @@ namespace FPTBook.Data.Migrations
                             Id = 2,
                             CartId = 2,
                             CustomerId = 2,
-                            Image = "https://i.ytimg.com/vi/VM03KHkVXuc/maxresdefault.jpg",
                             Name = "De men phuu luu ki",
                             Price = 22000f,
                             Title = "Truyen tranh"
@@ -79,7 +76,6 @@ namespace FPTBook.Data.Migrations
                             Id = 3,
                             CartId = 3,
                             CustomerId = 3,
-                            Image = "https://m.media-amazon.com/images/M/MV5BYzIzOWQ3NDYtOTFlOC00OGMwLTgwZWItNWI2ZDlmZGEwNGQ3XkEyXkFqcGdeQXVyODAzNzAwOTU@.jpg",
                             Name = "Doraemon",
                             Price = 40000f,
                             Title = "Truyen tranh"
@@ -89,7 +85,6 @@ namespace FPTBook.Data.Migrations
                             Id = 4,
                             CartId = 4,
                             CustomerId = 4,
-                            Image = "https://1.bp.blogspot.com/-0nneT6gz6EU/YLunEqXZSUI/AAAAAAAAAJE/RNzZLQq9zBUsFXHCHUmZK0eZln87RPWMQCLcBGAsYHQ/w0/5.jpeg",
                             Name = "o long vien",
                             Price = 29000f,
                             Title = "Truyen tranh"
@@ -99,7 +94,6 @@ namespace FPTBook.Data.Migrations
                             Id = 5,
                             CartId = 5,
                             CustomerId = 5,
-                            Image = "",
                             Name = "It ",
                             Price = 30000f,
                             Title = "Sach khoa hoc"
