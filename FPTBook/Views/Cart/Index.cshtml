@@ -1,20 +1,37 @@
 ﻿@model ICollection<FPTBook.Models.Cart>
 
-    <table class="table-active">
-        <tr>
-            <th>Book Id</th>
-            <th>Book Name</th>
-            <th>Book Price</th>
-            <th>Book Title</th>
-        </tr>
-    @foreach(var cart in Model)
-    {
-        <tr>
-            <td>@cart.Id</td>
-            <td>@cart.Name</td>
-            <td>@cart.Price</td>
-            <td>@cart.Title</td>
-        </tr>
-    }
-
+<div class="container col-md-8 text-center mt-3">
+    <h1 class="text text-primary">Book List</h1>
+    
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>
+                    Cart Id
+                </th>
+                 <th>
+                    Amount
+                </th>
+                 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cart in Model)
+           {
+               <tr>
+                   <td>
+                       @Html.DisplayFor(item => cart.Id)
+                   </td>
+                   
+                    <td>
+                        <input class="form-control"  />
+                    </td>
+                   
+               </tr>
+           }
+        </tbody>
     </table>
+    <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Buy">
+        </div>
+</div>

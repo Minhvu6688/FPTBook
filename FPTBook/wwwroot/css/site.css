@@ -7,6 +7,14 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.tieude {
+    text-align : center;
+    color: darkred;
+}
+.book {
+    color: black;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;

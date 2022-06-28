@@ -1,4 +1,6 @@
-﻿namespace FPTBook.Models
+﻿using System.Collections.Generic;
+
+namespace FPTBook.Models
 {
     public class Customer
     {
@@ -7,5 +9,6 @@
         public string Email { get; set; }
         public string Phone { get; set; }
 
+        public ICollection<Book> Book { get; set; }
     }
 }

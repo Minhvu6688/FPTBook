@@ -4,14 +4,16 @@ using FPTBook.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FPTBook.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220627075657_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,27 +28,17 @@ namespace FPTBook.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CartId");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Book");
 
@@ -54,46 +46,36 @@ namespace FPTBook.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CartId = 1,
-                            CustomerId = 1,
                             Name = "Truyen ma",
-                            Price = 20000f,
+                            Price = 20000.0,
                             Title = "Truyen ma"
                         },
                         new
                         {
                             Id = 2,
-                            CartId = 2,
-                            CustomerId = 2,
                             Name = "De men phuu luu ki",
-                            Price = 22000f,
+                            Price = 22000.0,
                             Title = "Truyen tranh"
                         },
                         new
                         {
                             Id = 3,
-                            CartId = 3,
-                            CustomerId = 3,
                             Name = "Doraemon",
-                            Price = 40000f,
+                            Price = 40000.0,
                             Title = "Truyen tranh"
                         },
                         new
                         {
                             Id = 4,
-                            CartId = 4,
-                            CustomerId = 4,
                             Name = "o long vien",
-                            Price = 29000f,
+                            Price = 29000.0,
                             Title = "Truyen tranh"
                         },
                         new
                         {
                             Id = 5,
-                            CartId = 5,
-                            CustomerId = 5,
                             Name = "It ",
-                            Price = 30000f,
+                            Price = 30000.0,
                             Title = "Sach khoa hoc"
                         });
                 });
@@ -114,46 +96,19 @@ namespace FPTBook.Data.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("bookIdId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("customerIdId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Cart");
+                    b.HasIndex("bookIdId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Lama1",
-                            Price = 20000f,
-                            Title = "Truyen ma"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Lama2",
-                            Price = 25000f,
-                            Title = "Truyen ma"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Lama3",
-                            Price = 27000f,
-                            Title = "Sach Khoa hoc"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Lama4",
-                            Price = 27000f,
-                            Title = "Sach Khoa hoc"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Lama5",
-                            Price = 27000f,
-                            Title = "Sach Khoa hoc"
-                        });
+                    b.HasIndex("customerIdId");
+
+                    b.ToTable("Cart");
                 });
 
             modelBuilder.Entity("FPTBook.Models.Customer", b =>
@@ -180,37 +135,23 @@ namespace FPTBook.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "minhlc@gmail.com",
-                            Name = "Nguyen Van Minh",
-                            Phone = "0866046616"
+                            Email = "vuminh@gmail.com",
+                            Name = "Minh",
+                            Phone = "0988345678"
                         },
                         new
                         {
                             Id = 2,
-                            Email = "admin@gmail.com",
-                            Name = "Nguyen Van Binh",
-                            Phone = "0866046617"
+                            Email = "vuminh@gmail.com",
+                            Name = "Minh",
+                            Phone = "0988345678"
                         },
                         new
                         {
                             Id = 3,
-                            Email = "custumer@gmail.com",
-                            Name = "Nguyen Thi Linh",
-                            Phone = "0866046618"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Email = "custumer@gmail.com",
-                            Name = "Nguyen Thi Linh",
-                            Phone = "0866046618"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Email = "custumer@gmail.com",
-                            Name = "Nguyen Thi Linh",
-                            Phone = "0866046618"
+                            Email = "vuminh@gmail.com",
+                            Name = "Minh",
+                            Phone = "0988345678"
                         });
                 });
 
@@ -414,19 +355,15 @@ namespace FPTBook.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("FPTBook.Models.Book", b =>
+            modelBuilder.Entity("FPTBook.Models.Cart", b =>
                 {
-                    b.HasOne("FPTBook.Models.Cart", "Cart")
-                        .WithMany("Book")
-                        .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("FPTBook.Models.Book", "bookId")
+                        .WithMany()
+                        .HasForeignKey("bookIdId");
 
-                    b.HasOne("FPTBook.Models.Customer", "Customer")
-                        .WithMany("Book")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("FPTBook.Models.Customer", "customerId")
+                        .WithMany()
+                        .HasForeignKey("customerIdId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

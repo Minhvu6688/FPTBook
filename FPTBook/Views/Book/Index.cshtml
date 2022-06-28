@@ -15,7 +15,7 @@
    {
        <tr class="table-info">
            <th scope="row">@book.Id</th>
-            <td><a asp-area="" asp-controller="Book" asp-action="BookDetail" asp-route-id="@book.Id" class="card-link" >@book.Name</a></td>
+            <td ><a asp-area="" asp-controller="Book" asp-action="BookDetail" asp-route-id="@book.Id" class="card-link" > <p style="color:black;">@book.Name</p></a></td>
              <td>@book.Price VND</td>
               <td>@book.Title</td>
               <td><button type="button" class="btn btn-danger">Delete</button>
