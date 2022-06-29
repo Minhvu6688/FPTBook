@@ -46,8 +46,8 @@ namespace FPTBook.Data
                 new Cart { Id = 2, Price = 21000, Amount = 2 },
                 new Cart { Id = 3, Price = 22000, Amount = 3 },
                 new Cart { Id = 4, Price = 23000, Amount = 4 },
-                new Cart { Id = 5, Price = 24000, Amount = 5 },
-                new Cart { Id = 6, Price = 24000, Amount = 6 }
+                new Cart { Id = 5, Price = 24000, Amount = 5 }
+
 
                 );
         }
