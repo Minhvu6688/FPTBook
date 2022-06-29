@@ -15,7 +15,7 @@ namespace FPTBook.Data
         }
         public DbSet<Book> Book { get; set; }
         public DbSet<Cart> Cart { get; set; }
-        public DbSet<Customer> Customer{ get; set; }
+        public DbSet<User> Customer{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -50,12 +50,12 @@ namespace FPTBook.Data
         }
         private void SeedCustomer(ModelBuilder builder)
         {
-            builder.Entity<Customer>().HasData(
-                new Customer { Id = 1, Email = "minhlc@gmail.com", Name = "Nguyen Van Minh", Phone = "0866046616"},
-                new Customer { Id = 2, Email = "admin@gmail.com", Name = "Nguyen Van Binh", Phone = "0866046617" },
-                new Customer { Id = 3, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
-                new Customer { Id = 4, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
-                new Customer { Id = 5, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" }
+            builder.Entity<User>().HasData(
+                new User { Id = 1, Email = "minhlc@gmail.com", Name = "Nguyen Van Minh", Phone = "0866046616"},
+                new User { Id = 2, Email = "admin@gmail.com", Name = "Nguyen Van Binh", Phone = "0866046617" },
+                new User { Id = 3, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
+                new User { Id = 4, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
+                new User { Id = 5, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" }
                 );
         }
 
