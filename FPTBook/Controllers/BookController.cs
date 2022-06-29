@@ -56,6 +56,7 @@ namespace FPTBook.Controllers
         {
             if (ModelState.IsValid)
             {
+                book.CartId = 1;
                 context.Book.Add(book);
                 context.SaveChanges();
                 return RedirectToAction("Index");

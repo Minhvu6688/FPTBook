@@ -34,7 +34,9 @@ namespace FPTBook.Data
            new Book { Id = 2, Name = "De men phuu luu ki", Price = 22000, Title = "Truyen tranh", CartId = 2, CustomerId = 2,  },
            new Book { Id = 3, Name = "Doraemon", Price = 40000, Title = "Truyen tranh", CartId = 3, CustomerId = 3, },
            new Book { Id = 4, Name = "o long vien", Price = 29000, Title = "Truyen tranh", CartId = 4, CustomerId = 4,  },
-           new Book { Id = 5, Name = "It ", Price = 30000, Title = "Sach khoa hoc", CartId = 5, CustomerId = 5, }
+           new Book { Id = 5, Name = "It ", Price = 30000, Title = "Sach khoa hoc", CartId = 5, CustomerId = 5, },
+           new Book { Id = 6, Name = "It ", Price = 30000, Title = "Sach khoa hoc", CartId = 6, CustomerId = 6, }
+
            );
         }
         private void SeedCart(ModelBuilder builder) 
@@ -44,7 +46,8 @@ namespace FPTBook.Data
                 new Cart { Id = 2, Price = 21000, Amount = 2 },
                 new Cart { Id = 3, Price = 22000, Amount = 3 },
                 new Cart { Id = 4, Price = 23000, Amount = 4 },
-                new Cart { Id = 5, Price = 24000, Amount = 5 }
+                new Cart { Id = 5, Price = 24000, Amount = 5 },
+                new Cart { Id = 6, Price = 24000, Amount = 6 }
 
                 );
         }
@@ -55,7 +58,8 @@ namespace FPTBook.Data
                 new Customer { Id = 2, Email = "admin@gmail.com", Name = "Nguyen Van Binh", Phone = "0866046617" },
                 new Customer { Id = 3, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
                 new Customer { Id = 4, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
-                new Customer { Id = 5, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" }
+                new Customer { Id = 5, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046618" },
+                new Customer { Id = 6, Email = "custumer@gmail.com", Name = "Nguyen Thi Linh", Phone = "0866046619" }
                 );
         }
 

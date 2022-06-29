@@ -17,6 +17,5 @@ namespace FPTBook.Controllers
             return View(context.Cart.ToList());
         }
 
-        //ti huong dan t dung bootstrap nhe cek
     }
 }
